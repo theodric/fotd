@@ -25,9 +25,8 @@ The idea here is that you set this up to run at boot and symlink /path/to/desire
 ~Can try putting it into /etc/fstab~
 ~```/path/to/fotd_fuse.py /mnt/fortune fuse.python3,noauto,x-systemd.automount,_netdev,allow_other 0 0```~
 
-~Otherwise, ~
-try the fotd-fuse.service file (but edit it to reflect your system configuration)
-The one provided work with openSUSE Tumbleweed as of 2025-07-06 and defaults to Zippy fortunes
+Try the fotd-fuse.service file (but edit it to reflect your system configuration)
+The one provided works with openSUSE Tumbleweed as of 2025-07-06 and defaults to Zippy fortunes
 
 1. Put the service file in /etc/systemd/system
 2. mkdir /wherever/you/decided/
