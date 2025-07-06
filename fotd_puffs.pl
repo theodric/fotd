@@ -27,7 +27,7 @@ sub getattr {
 sub readdir {
     my ($path, $offset) = @_;
     return -ENOENT() unless $path eq '/';
-    return ('.', '..', 'fortune');
+    return ['.', '..', 'fortune'];
 }
 
 sub open {
@@ -46,11 +46,24 @@ sub read {
     return $data;
 }
 
+sub statfs {
+    # Return a minimal statfs structure
+    # (blocks, bfree, bavail, files, ffree, bsize, namelen, frsize)
+    return (1, 1, 1, 1, 1, 4096, 255, 4096);
+}
+
+sub destroy {
+    # No-op, but required for some FUSE/PUFFS implementations
+    return 0;
+}
+
 Fuse::main(
     mountpoint => $ARGV[0],
     getattr    => \&getattr,
     readdir    => \&readdir,
     open       => \&open,
     read       => \&read,
+    statfs     => \&statfs,
+    destroy    => \&destroy,
     threaded   => 0,
 ); 
