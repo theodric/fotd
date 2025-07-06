@@ -1,0 +1,12 @@
+[Unit]
+Description=Fortune FUSE Filesystem
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/bin/python3 /path/to/fotd_fuse.py /mnt/fortune
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
