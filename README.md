@@ -22,8 +22,8 @@ will print a random fortune from the fortune file you specified as a mount argum
 The idea here is that you set this up to run at boot and symlink /path/to/desired/mountpoint/fortune to /etc/motd, which will cause anything that prints the MOTD to grab a random fortune instead.
 
 ## Service
-Can try putting it into /etc/fstab
-```/path/to/fotd_fuse.py /mnt/fortune fuse.python3,noauto,x-systemd.automount,_netdev,allow_other 0 0```
+~Can try putting it into /etc/fstab~
+~```/path/to/fotd_fuse.py /mnt/fortune fuse.python3,noauto,x-systemd.automount,_netdev,allow_other 0 0```~
 
 Otherwise, try the fotd-fuse.service file (but edit it to reflect your system configuration)
 
