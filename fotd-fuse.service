@@ -5,7 +5,7 @@ After=network.target
 [Service]
 Type=simple
 User=root
-ExecStart=/usr/bin/python3 /path/to/fotd_fuse.py /mnt/fortune
+ExecStart=/usr/bin/python3 /usr/src/fotd/fotd_fuse.py /mnt/fortunes /usr/share/fortune/zippy
 Restart=on-failure
 
 [Install]
