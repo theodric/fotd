@@ -2,6 +2,8 @@
 FOTD - Fortune Of The Day
 Creates a special file with FUSE which calls 'fortune' on a specific fortune file, allowing you to cause /etc/motd to print random fortunes.
 
+_[You may also be interested in Fortitude](https://github.com/theodric/fortitude), my curated collection of new, additional fortune files for fortune!_
+
 ## Installation
 PREREQUISITES:  
 On the Python side, you'll need fusepy (however you want to get that - either from your distro's repos or via pip).  
